@@ -465,7 +465,7 @@ function Start-CKLMergeProcess {
             Write-Host "  New CKL:     $NewCKLPath"
             Write-Host "  Output CKL:  $OutputCKLPath"
 
-            $CommentTag = Read-Host "Place your comment tag here (Ex. 'GJR (20250826_SITE-LRU-00Xv)')"
+            $CommentTag = Read-Host "Place your comment tag here (Ex. '<Initials> (DATE_LRU)')"
 
             $NewCKL, $OldCKL = Load-CKLFiles $OldCKLPath $NewCKLPath
             $rulesMatch = Test-RuleVersionMatch $NewCKL $OldCKL
@@ -481,5 +481,6 @@ function Start-CKLMergeProcess {
         $rerun = Read-Host "`nDo you want to run another comparison? (y/n)"
     } while ($rerun -eq 'y')
 }
+
 
 Start-CKLMergeProcess
